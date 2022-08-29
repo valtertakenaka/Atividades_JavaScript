@@ -1,0 +1,23 @@
+2) Pesquise a utilização do método setTimeout() e implemente
+um relógio que atualize o horário a cada segundo:
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>RELOGIO setTimeout</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <p>Clique no botão abaixo para ver a hora atual.</p> 
+    <button onclick="horaAtual()">Atualizar</button>
+    <h2 id="rel"></h2>
+    <script>
+      function horaAtual(){
+        let hora = new Date().toLocaleTimeString();
+        document.getElementById("rel").innerHTML = hora;
+        setTimeout(horaAtual, 1000)
+      }
+    </script>
+    
+  </body>
+</html>
