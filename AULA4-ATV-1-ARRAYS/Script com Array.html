@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" placeholder="Digite algo" id="input">
+    <button id="botao">Incluir</button>
+    <ol id="lista"></ol>
+    <script>
+      var lista = [];
+      document.getElementById("botao").addEventListener("click",function(){
+        document.getElementById("lista").innerHTML = "";
+        let palavra = document.getElementById("input").value;
+        palavra = palavra.toUpperCase();
+        //toLowerCase(); converte toda a frase para minúsculo
+        //toUpperCase(); CONVERTE TODA A FRASE PARA MAIÚSCULO
+        lista.push(palavra);
+        lista = lista.sort();
+        for(let i = 0; i < lista.length; i++)
+        {
+          let e = document.createElement("li");
+          e.innerText = lista[i];
+          document.getElementById("lista").appendChild(e);
+          document.getElementById("input").value = "";
+          document.getElementById("input").focus();
+         
+        }
+      })
+
+    </script>
+  </body>
+</html>
